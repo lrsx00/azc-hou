@@ -26,5 +26,4 @@ build
 coverage
 .tmp
 .cursorrules
-.gitignore
 docs/changelogs
