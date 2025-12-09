@@ -1,1 +1,30 @@
+# 依赖
 node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 构建输出
+dist
+build
+
+# Vite 缓存
+.vite
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# IDE / 系统文件
+.idea
+.vscode
+.DS_Store
+
+# 覆盖率、临时文件
+coverage
+.tmp
+.cursorrules
+.gitignore
+docs/changelogs
