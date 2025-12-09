@@ -78,6 +78,20 @@ let AuthService = class AuthService {
             },
         };
     }
+    async changePassword(userId, oldPassword, newPassword) {
+        const user = await this.usersService.findById(userId);
+        if (!user) {
+            throw new common_1.NotFoundException('用户不存在');
+        }
+        const isMatch = await bcrypt.compare(oldPassword, user.passwordHash);
+        if (!isMatch) {
+            throw new common_1.UnauthorizedException('旧密码不正确');
+        }
+        const newHash = await bcrypt.hash(newPassword, 10);
+        user.passwordHash = newHash;
+        await this.usersService.save(user);
+        return { message: '密码修改成功' };
+    }
 };
 exports.AuthService = AuthService;
 exports.AuthService = AuthService = __decorate([

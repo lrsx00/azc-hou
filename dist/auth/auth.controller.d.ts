@@ -1,5 +1,6 @@
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
+import { ChangePasswordDto } from './dto/change-password.dto';
 export declare class AuthController {
     private readonly authService;
     constructor(authService: AuthService);
@@ -26,4 +27,11 @@ export declare class AuthController {
         username: string;
         role: string;
     };
+    changePassword(req: {
+        user: {
+            userId: number;
+        };
+    }, dto: ChangePasswordDto): Promise<{
+        message: string;
+    }>;
 }

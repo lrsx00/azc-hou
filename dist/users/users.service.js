@@ -56,8 +56,14 @@ let UsersService = class UsersService {
     constructor(usersRepository) {
         this.usersRepository = usersRepository;
     }
+    findById(id) {
+        return this.usersRepository.findOne({ where: { id } });
+    }
     findByUsername(username) {
         return this.usersRepository.findOne({ where: { username } });
+    }
+    save(user) {
+        return this.usersRepository.save(user);
     }
     async createAdminUserIfNotExists() {
         const totalUsers = await this.usersRepository.count();

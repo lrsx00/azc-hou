@@ -22,6 +22,7 @@ const app_service_1 = require("./app.service");
 const users_module_1 = require("./users/users.module");
 const auth_module_1 = require("./auth/auth.module");
 const users_service_1 = require("./users/users.service");
+const staff_templates_module_1 = require("./staff-templates/staff-templates.module");
 let AppModule = class AppModule {
     usersService;
     constructor(usersService) {
@@ -58,6 +59,7 @@ exports.AppModule = AppModule = __decorate([
             }),
             users_module_1.UsersModule,
             auth_module_1.AuthModule,
+            staff_templates_module_1.StaffTemplatesModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

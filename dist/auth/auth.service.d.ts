@@ -17,4 +17,7 @@ export declare class AuthService {
             role: string;
         };
     }>;
+    changePassword(userId: number, oldPassword: string, newPassword: string): Promise<{
+        message: string;
+    }>;
 }

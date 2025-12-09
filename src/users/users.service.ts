@@ -11,8 +11,16 @@ export class UsersService {
     private readonly usersRepository: Repository<User>,
   ) {}
 
+  findById(id: number): Promise<User | null> {
+    return this.usersRepository.findOne({ where: { id } });
+  }
+
   findByUsername(username: string): Promise<User | null> {
     return this.usersRepository.findOne({ where: { username } });
+  }
+
+  save(user: User): Promise<User> {
+    return this.usersRepository.save(user);
   }
 
   async createAdminUserIfNotExists(): Promise<void> {
